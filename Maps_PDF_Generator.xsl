@@ -11,7 +11,7 @@
 <fo:page-sequence master-reference="MyTemplate">
 	<fo:flow flow-name="xsl-region-body">
 		<fo:block>
-			<fo:external-graphic src="url('$path')"/>
+			<fo:external-graphic src="url('https://maps.googleapis.com/maps/api/staticmap?center=48.84098,10.09598&zoom=12&size=400x400&key=AIzaSyDnldJooKVilRAZYDMeZt_nA2fdLURtqxk')"/>
 		</fo:block>
 	</fo:flow>
 </fo:page-sequence>
