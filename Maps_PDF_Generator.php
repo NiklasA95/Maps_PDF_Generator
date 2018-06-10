@@ -7,6 +7,7 @@
         width: 400px;
        }
     </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <h3>Static Map Generator</h3>
@@ -38,7 +39,7 @@
 			var path = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=" + zoom + "&size=400x400&key=AIzaSyDnldJooKVilRAZYDMeZt_nA2fdLURtqxk";
 			document.getElementById('static_map').src = path;
 			
-			<!--window.location.href = "Maps_PDF_Generator.php?path=" + path;->
+			$.post('Maps_PDF_Generator.php', {variable: path});
 		}
 		
     </script>
@@ -47,6 +48,10 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWwZ4k-qRW0D2brh9bAZBSxZZylbc3vtY&callback=initMap">
     </script>
 	
+	<?php
+		$path = $_POST['variable'];
+		file_put_contents('map.png',file_get_contents($path));
+	?>
 	
   </body>
 </html>
