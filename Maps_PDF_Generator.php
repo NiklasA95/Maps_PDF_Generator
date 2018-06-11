@@ -51,6 +51,8 @@
 	<?php
 		$path = $_POST['variable'];
 		file_put_contents('map.png',file_get_contents($path));
+		
+		exec('fop -xml myXMLFile.xml -xsl Maps_PDF_Generator.xsl -pdf mypdf.pdf'); 
 	?>
 	
   </body>
